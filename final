@@ -1,0 +1,560 @@
+#! /bin/bash
+
+## This is the function that shows when you initially start or guess the right word
+
+letterb=_
+lettera=_
+letters=_
+letterh=_
+
+function start {
+echo;echo
+echo "             $letterb $lettera $letters $letterh      Four letter word!"
+echo
+}
+
+function win {
+echo
+echo
+echo "                  You've Won!"
+echo "                              The word was BASH"
+}
+
+## These are ladder steps to be able to stay on the right path whether you get random rights and wrongs
+
+
+function letter1 {
+echo
+echo
+letterb='b'
+start
+echo
+echo "                      The letter B is in the word! Guess again!"
+beginning2nd
+}
+
+function letter2 {
+echo
+echo
+lettera='a'
+start
+echo "                  a "
+echo "                      The letter A is in the word! Guess again!"
+beginning2nd
+}
+
+function letter3 {
+echo
+echo
+letters='s'
+start
+echo "                  s "
+echo "                      The letter S is in the word! Guess again!"
+beginning2nd
+}
+
+function letter4 {
+echo
+echo
+letterh='h'
+start
+echo "                  h "
+echo "                      The letter H is in the word! Guess again!"
+beginning2nd
+}
+
+function letter11 {
+echo
+echo
+letterb='b'
+start
+echo "                  b "
+echo "                      The letter B is in the word! Guess again!"
+beginning1
+}
+
+function letter21 {
+echo
+echo
+lettera='a'
+start
+echo "                  a "
+echo "                      The letter A is in the word! Guess again!"
+beginning1
+}
+
+function letter31 {
+echo
+echo
+letters='s'
+start
+echo "                  s "
+echo "                      The letter S is in the word! Guess again!"
+beginning1
+}
+
+function letter41 {
+echo
+echo
+letterh='h'
+start
+echo "                  h "
+echo "                      The letter H is in the word! Guess again!"
+beginning1
+}
+
+function letter12 {
+echo
+echo
+letterb='b'
+start
+echo "                  b "
+echo "                      The letter B is in the word! Guess again!"
+beginning2
+}
+
+function letter22 {
+echo
+echo
+lettera='a'
+start
+echo "                  a "
+echo "                      The letter A is in the word! Guess again!"
+beginning2
+}
+
+function letter32 {
+echo
+echo
+letters='s'
+start
+echo "                  s "
+echo "                      The letter S is in the word! Guess again!"
+beginning2
+}
+
+function letter42 {
+echo
+echo
+letterh='h'
+start
+echo "                  h "
+echo "                      The letter H is in the word! Guess again!"
+beginning2
+}
+
+function letter13 {
+echo
+echo
+letterb='b'
+start
+echo "                  b "
+echo "                      The letter B is in the word! Guess again!"
+beginning3
+}
+
+function letter23 {
+echo
+echo
+lettera='a'
+start
+echo "                  a "
+echo "                      The letter A is in the word! Guess again!"
+beginning3
+}
+
+function letter33 {
+echo
+echo
+letters='s'
+start
+echo "                  s "
+echo "                      The letter S is in the word! Guess again!"
+beginning3
+}
+
+function letter43 {
+echo
+echo
+letterh='h'
+start
+echo "                  h "
+echo "                      The letter H is in the word! Guess again!"
+beginning3
+}
+
+function letter14 {
+echo
+echo
+letterb='b'
+start
+echo "                  b "
+echo "                      The letter B is in the word! Guess again!"
+beginning4
+}
+
+function letter24 {
+echo
+echo
+lettera='a'
+start
+echo "                  a "
+echo "                      The letter A is in the word! Guess again!"
+beginning4
+}
+
+function letter34 {
+echo
+echo
+letters='s'
+start
+echo "                  s "
+echo "                      The letter S is in the word! Guess again!"
+beginning4
+}
+
+function letter44 {
+echo
+echo
+letterh='h'
+start
+echo "                  h "
+echo "                      The letter H is in the word! Guess again!"
+beginning4
+}
+
+function letter15 {
+echo
+echo
+letterb='b'
+start
+echo "                  b "
+echo "                      The letter B is in the word! Guess again!"
+beginning5
+}
+
+function letter25 {
+echo
+echo
+lettera='a'
+start
+echo "                  a "
+echo "                      The letter A is in the word! Guess again!"
+beginning5
+}
+
+function letter35 {
+echo
+echo
+letters='s'
+start
+echo "                  s "
+echo "                      The letter S is in the word! Guess again!"
+beginning5
+}
+
+function letter45 {
+echo
+echo
+letterh='h'
+start
+echo "                  h "
+echo "                      The letter H is in the word! Guess again!"
+beginning5
+}
+
+function letter16 {
+echo
+echo
+letterb='b'
+start
+echo "                  b "
+echo "                      The letter B is in the word! Guess again!"
+beginning6
+}
+
+function letter26 {
+echo
+echo
+lettera='a'
+start
+echo "                  a "
+echo "                      The letter A is in the word! Guess again!"
+beginning6
+}
+
+function letter36 {
+echo
+echo
+letters='s'
+start
+echo "                  s "
+echo "                      The letter S is in the word! Guess again!"
+beginning6
+}
+
+function letter46 {
+echo
+echo
+letterh='h'
+start
+echo "                  h "
+echo "                      The letter H is in the word! Guess again!"
+beginning6
+}
+
+##These are the ladder steps to be able to go from the start of the hangman to the end of the hangman on failed attempts
+
+function beginning6 {
+echo
+echo
+echo "          Please guess another letter or word"
+read userinput
+case $userinput in
+    b) letter16 ;;
+    a) letter26 ;;
+    s) letter36 ;;
+    h) letter46 ;;
+    bash) win ;;
+    *)fail6 ;;
+esac
+}
+
+function fail6 {
+echo
+echo
+echo "          Ope $userinput is not one of the letters or the word :( "
+wrong7
+}
+
+function beginning5 {
+echo
+echo
+echo "          Please guess another letter or word"
+read userinput
+case $userinput in
+    b) letter15 ;;
+    a) letter25 ;;
+    s) letter35 ;;
+    h) letter45 ;;
+    bash) win ;;
+    *)fail5 ;;
+esac
+}
+
+function fail5 {
+echo
+echo
+echo "          Ope $userinput is not one of the letters or the word :( "
+wrong6
+}
+
+function beginning4 {
+echo
+echo
+echo "          Please guess another letter or word"
+read userinput
+case $userinput in
+    b) letter14 ;;
+    a) letter24 ;;
+    s) letter34 ;;
+    h) letter44 ;;
+    bash) win ;;
+    *)fail4 ;;
+esac
+}
+
+function fail4 {
+echo
+echo
+echo "          Ope $userinput is not one of the letters or the word :( "
+wrong5
+}
+
+function beginning3 {
+echo
+echo
+echo "          Please guess another letter or word"
+read userinput
+case $userinput in
+    b) letter13 ;;
+    a) letter23 ;;
+    s) letter33 ;;
+    h) letter43 ;;
+    bash) win ;;
+    *)fail3 ;;
+esac
+}
+
+function fail3 {
+echo
+echo
+echo "          Ope $userinput is not one of the letters or the word :( "
+wrong4
+}
+
+function beginning2 {
+echo
+echo
+echo "          Please guess another letter or word"
+read userinput
+case $userinput in
+    b) letter12 ;;
+    a) letter22 ;;
+    s) letter32 ;;
+    h) letter42 ;;
+    bash) win ;;
+    *)fail2 ;;
+esac
+}
+
+function fail2 {
+echo
+echo
+echo "          Ope $userinput is not one of the letters or the word :( "
+wrong3
+}
+
+function beginning1 {
+echo
+echo
+echo "          Please guess another letter or word"
+read userinput
+case $userinput in
+    b) letter11 ;;
+    a) letter21 ;;
+    s) letter31 ;;
+    h) letter41 ;;
+    bash) win ;;
+    *)fail1 ;;
+esac
+}
+
+function fail1 {
+echo
+echo
+echo "          Ope $userinput is not one of the letters or the word :( "
+wrong2
+}
+
+function beginning {
+start
+echo
+echo
+echo "          Please guess a letter or word"
+read userinput
+case $userinput in
+    b) letter1 ;; 
+    a) letter2 ;;
+    s) letter3 ;;
+    h) letter4 ;;
+    bash) win ;;
+    *)fail ;;
+esac
+}
+
+function beginning2nd {
+echo
+echo
+echo "          Please guess a letter or word"
+read userinput
+case $userinput in
+    b) letter1 ;;
+    a) letter2 ;;
+    s) letter3 ;;
+    h) letter4 ;;
+    bash) win ;;
+    *)fail ;;
+esac
+}
+
+function fail {
+echo
+echo
+echo "          Ope $userinput is not one of the letters or the word :( "
+wrong1
+}
+
+##These are the stick figures to be displayed if the user does a wrong guess
+
+function wrong1 {
+echo
+echo "          :(          "
+echo
+echo
+echo
+echo
+echo
+echo
+beginning1
+}
+function wrong2 {
+echo
+echo "          :(          "
+echo "           |          "
+echo
+echo
+echo
+echo
+echo
+beginning2
+}
+function wrong3 {
+echo
+echo "          :(          "
+echo "           |\         "
+echo
+echo
+echo
+echo
+echo
+beginning3
+}
+function wrong4 {
+echo
+echo "          :(          "
+echo "          /|\         "
+echo
+echo
+echo
+echo
+echo
+beginning4
+}
+function wrong5 {
+echo
+echo "          :(          "
+echo "          /|\         "
+echo "          /           "
+echo
+echo
+echo
+echo
+beginning5
+}
+function wrong6 {
+echo
+echo "          :(          "
+echo "          /|\         "
+echo "          / \         "
+echo
+echo
+echo
+echo
+beginning6
+}
+function wrong7 {
+echo "           __________ "
+echo "           |        | "
+echo "          :(        | "
+echo "          /|\       | "
+echo "          / \       | "
+echo "                    | "
+echo "                    | "
+echo "                    | "
+echo "                    | "
+echo "      YOU LOSE!!      "
+echo
+echo "   The word was BASH"
+}
+beginning
